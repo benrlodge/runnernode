@@ -2,12 +2,12 @@ require('./db/runs');
 
 var express = require('express');
 var path = require('path');
+var hbs = require('hbs');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
-var runs = require('./routes/runs');
 var app = express();
 
 // view engine setup
@@ -21,16 +21,10 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
-app.use('/runs', runs );
 require('./error-handler');
 
 
 
-// Make our db accessible to our router
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
 
 
 var server = app.listen(4567, function() {

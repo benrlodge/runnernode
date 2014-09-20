@@ -1,3 +1,40 @@
-<div class="title">
-Hey dar
-</div>
+<h3>Log a run</h3>
+
+<form method="POST" action="/runs">
+
+	<p>
+		<label for="date">Date</label>
+		<input type="text" name="date" id="date">
+	</p>
+
+	<p>
+		<label for="date">Distance</label>
+		<input type="text" name="distance" id="distance">
+	</p>
+
+	<!-- <p>
+		<label for="date">Clothing</label>
+		<input type="text" name="clothing" id="clothing">
+	</p>
+
+	<p>
+		<label for="date">Weather</label>
+		<input type="text" name="weather" id="weather">
+	</p> -->
+
+	<p>
+		<input type="submit">
+
+</form>
+
+
+<hr>
+<h4>Runs</h4>
+
+<%= runs %>
+
+
+
+
+<hr>
+<a href="/runs">Runs GET</a>
